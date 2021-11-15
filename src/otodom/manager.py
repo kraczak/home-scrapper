@@ -10,9 +10,6 @@ from common.service_manager_interface import BaseServiceManager
 class OtoDomManager(BaseServiceManager):
     base_url = "https://www.otodom.pl/pl/oferty/sprzedaz/mieszkanie/wroclaw"
 
-    async def get_params(self):
-        return self.home_params.get_params()
-
     async def get_href_from_listing_page(self, html: str) -> List[str]:
         soup = BeautifulSoup(html, 'lxml')
         data = soup.find_all('a', href=True, attrs={'data-cy': 'listing-item-link'})

@@ -5,8 +5,7 @@ description = ""
 authors = ["kornel43 <kornel43@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-pandas = "^1.3.4"
+python = "^3.10.0rc1"
 lxml = "*"
 peewee = "^3.14.8"
 peewee-migrations = "^0.3.19"

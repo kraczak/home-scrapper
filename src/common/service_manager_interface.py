@@ -1,6 +1,6 @@
 import asyncio
 from abc import abstractmethod, ABC
-from typing import List, Tuple, Callable, Protocol, Set, AsyncGenerator
+from typing import List, Tuple, Callable, Protocol, Set, AsyncGenerator, Dict
 from urllib.parse import urlparse, urlencode, urlunparse
 
 import aiohttp
@@ -42,13 +42,12 @@ class Filter(Protocol):
 
 class BaseServiceManager(ABC):
 
-    def __init__(self, home_params: ISearchParams, filter_addresses: List[Callable] = None):
+    def __init__(self, home_params: Dict[str, str], filter_addresses: List[str] = None):
         self.home_params = home_params
         self.filter_addresses = filter_addresses or []
 
-    @abstractmethod
     async def get_params(self):
-        pass
+        return self.home_params
 
     @property
     @abstractmethod

@@ -14,8 +14,8 @@ class ParamsManager:
     build_year: Optional[Tuple[int, int]] = None
 
     def get_olx_params(self):
-        return OlxParams(**self.__dict__)
+        return OlxParams(**self.__dict__).get_params()
 
     def get_otodom_params(self):
-        return OtoDomParams(**self.__dict__)
+        return OtoDomParams(**self.__dict__).get_params()
 
