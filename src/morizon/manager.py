@@ -9,8 +9,10 @@ from common.service_manager_interface import BaseServiceManager
 from common.utils import any_a_in_any_b
 
 
-class OlxManager(BaseServiceManager):
-    base_url = "https://www.olx.pl/nieruchomosci/mieszkania/wroclaw/"
+class MorizonManager(BaseServiceManager):
+    base_url = 'https://www.morizon.pl/mieszkania/wroclaw/'
+
+
 
     async def get_href_from_listing_page(self, html: str) -> List[str]:
         soup = BeautifulSoup(html, 'lxml')

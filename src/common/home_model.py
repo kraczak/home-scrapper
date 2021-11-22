@@ -52,7 +52,7 @@ class Home:
         return self.url == other.url or (self.address == other.address and self.price == other.price)
 
     def __hash__(self):
-        return hash(self.address + str(self.price))
+        return hash(str(self.address) + str(self.price))
 
     def create(self):
         try:
